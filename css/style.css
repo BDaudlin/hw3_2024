@@ -107,21 +107,18 @@ footer{
 
 /* Step 1: Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
-nav a:focus{
-  text-decoration: underline;
-}
-nav a:hover{
+nav:focus, nav:hover{
   text-decoration: underline;
 }
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
-div.skip a{
+.skip a{
   position: absolute;
   top: -40px;
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
-div.skip a:focus{
+.skip a:focus{
   top: 20px;
 }
 
@@ -134,20 +131,18 @@ div.skip a:focus{
 .container{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  row-gap: 15px;
+  grid-gap: 15px;
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 .container > :first-child{
-  grid-column: 1/-1;
-  background-image: url("images/header.jpg");
-  /* Parallax Effect */
-  background-attachment: fixed;  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: grid;
+  grid-column: 1 / -1;
   height: 400px;
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
+  text-align: center;
 }
 
 
@@ -155,59 +150,61 @@ first div in the grid  and place it in the grid. */
  four rows in the grid. */
 
       /*This will be a lot of rules.... but be strategic and combine seletors*/
-
-div.about{
-  grid-column: 2 / span 1;
+.about{
+  grid-column: 2;
   grid-row: 2;
 }
 
-div.method{
-  grid-column: 2 / span 1;
+.method{
+  grid-column: 2;
   grid-row: 3;
 }
 
-div.clients{
-  grid-column: 2 / span 1;
+.clients{
+  grid-column: 2;
   grid-row: 4;
 }
 
-div.contact{
-  grid-column: 2 / span 1;
+.contact{
+  grid-column: 2;
   grid-row: 5;
 }
 
-div.about-image{
-  grid-column: 1/-1;
-  max-height: 600px;
-  overflow: hidden;
+.about-image {
+  grid-column: 1 / -1;
   grid-row: 2;
-}
-
-div.method-image{
-  grid-column: 1/-1;
   max-height: 600px;
   overflow: hidden;
+}
+
+.method-image{
+  grid-column: 1 / -1;
   grid-row: 3;
-}
-
-div.clients-image{
-  grid-column: 1/-1;
   max-height: 600px;
   overflow: hidden;
+}
+
+.clients-image{
+  grid-column: 1 / -1;
   grid-row: 4;
-}
-
-div.contacts-image{
-  grid-column: 1/-1;
   max-height: 600px;
   overflow: hidden;
+}
+
+.contact-image{
+  grid-column: 1 / -1;
   grid-row: 5;
+  max-height: 600px;
+  overflow: hidden;
 }
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
-div.text-block{
-  display: grid;
-  place-items: center;
+.text-block{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
 }
 
 /* Add your media query here */
@@ -224,4 +221,3 @@ div.text-block{
 
 
  /* Step 13:Write the selector/rule property to update the .text-block class */
-
